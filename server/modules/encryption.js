@@ -1,6 +1,6 @@
 // No changes should be required in this file
 
-const bcrypt = require('bcryptjs');
+import bcrypt from 'bcryptjs';
 
 const SALT_WORK_FACTOR = 10; // This determines how secure the salt should be
 
@@ -22,7 +22,7 @@ const comparePassword = (candidatePassword, storedPassword) => {
   return bcrypt.compareSync(candidatePassword, storedPassword);
 };
 
-module.exports = {
+export default {
   encryptPassword,
   comparePassword,
 };

@@ -1,7 +1,7 @@
-const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
-const encryptLib = require('../modules/encryption');
-const pool = require('../modules/pool');
+import passport from 'passport';
+import LocalStrategy from 'passport-local';
+import encryptLib from '../modules/encryption.js';
+import pool from '../modules/pool.js';
 
 passport.serializeUser((user, done) => {
   done(null, user.id);
@@ -37,7 +37,7 @@ passport.deserializeUser((id, done) => {
 // Does actual work of logging in
 passport.use(
   'local',
-  new LocalStrategy((username, password, done) => {
+  new LocalStrategy.Strategy((username, password, done) => {
     pool
       .query('SELECT * FROM "user" WHERE username = $1', [username])
       .then((result) => {
@@ -62,4 +62,4 @@ passport.use(
   })
 );
 
-module.exports = passport;
+export default passport;

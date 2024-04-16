@@ -44,7 +44,7 @@ class NavBar {
 		document.getElementById("navigation").prepend(btnShowHide);
 
 		this._addElement_li(null, "index.html", "Home", {isRoot: true});
-		this._addElement_li(null, "campaign.html", "Campaign");
+		this._addElement_li(null, "campaign", "Campaign");
 
 		this._addElement_dropdown(null, NavBar._CAT_RULES);
 		this._addElement_li(NavBar._CAT_RULES, "quickreference.html", "Quick Reference");

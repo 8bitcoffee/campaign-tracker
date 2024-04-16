@@ -25,13 +25,13 @@
 		"test:json": "node test/test-json.js",
 		"test:tags": "node test/test-tags.js",
 		"test:unit": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
-		"test": "npm run test:js && npm run test:unit && npm run test:css && npm run test:data",
+		"test": "npm run test:js && npm run test:unit && npm run test:css && npm run test:data && vitest",
 		"lint": "npm run lint:js && npm run lint:css && npm run lint:data",
 		"build:css": "sass --style=compressed scss/:css/ && node node/rm.js css/includes/",
 		"build:seo": "node node/generate-seo.js",
 		"build:sw": "node node/build-sw.mjs",
 		"build:sw:prod": "node node/build-sw.mjs prod",
-		"build": "npm run clean-jsons && npm run gen && npm run build:css && npm run build:sw:prod",
+		"build": "npm run clean-jsons && npm run gen && npm run build:css && npm run build:sw:prod && vite build",
 		"preversion": "npm test",
 		"version": "node node/version-bump.js",
 		"serve:dev": "http-server -c-1 --cors --port 5003",
@@ -39,7 +39,10 @@
 		"spellcheck:check-data": "echo \"This can take a few minutes.\" && npx cspell --no-progress --show-context --show-suggestions \"data/**/*.json\"",
 		"spellcheck:check-data-quick": "git diff --name-only | grep -P \"^data/[^.]+.json\" | npx cspell --no-progress --show-context --show-suggestions --file-list stdin",
 		"spellcheck:trust-data": "echo \"This can take a few minutes.\" && echo \"# new words on $(date)\" >> spellcheck/dnd-words.txt && npx cspell --words-only --unique \"./data/**/*.json\" | sort --ignore-case >> spellcheck/dnd-words.txt",
-		"prettier:css": "prettier scss/**/*.scss --log-level warn"
+		"prettier:css": "prettier scss/**/*.scss --log-level warn",
+		"start": "node server/server.js | vite",
+		"client": "vite",
+		"server": "nodemon --watch server server/server.js"
 	},
 	"repository": {
 		"type": "git",
@@ -64,7 +67,10 @@
 		"simple-git": "^3.22.0",
 		"stylelint": "^16.2.1",
 		"stylelint-config-standard-scss": "^13.0.0",
-		"workbox-cli": "^7.0.0"
+		"workbox-cli": "^7.0.0",
+		"vite": "^5.0.7",
+		"@vitejs/plugin-react": "^4.2.1",
+    	"vitest": "^1.0.4"
 	},
 	"bugs": {
 		"url": "https://github.com/5etools-mirror-2/5etools-mirror-2.github.io/issues"

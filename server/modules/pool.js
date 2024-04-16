@@ -5,7 +5,7 @@
  change `prime_app` to the name of your database, and you should be all set!
 */
 
-const pg = require('pg');
+import pg from 'pg';
 let pool;
 
 // When our app is deployed to the internet 
@@ -28,8 +28,8 @@ else {
     pool = new pg.Pool({
         host: 'localhost',
         port: 5432,
-        database: 'prime_app',   // 	💥 Change this to the name of your database!
+        database: 'campaign_tracker',   // 	💥 Change this to the name of your database!
     });
 }
 
-module.exports = pool;
+export default pool;
