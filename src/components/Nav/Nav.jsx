@@ -12,6 +12,9 @@ function Nav() {
       <Link to="/home">
         <h2 className="nav-title">Campaign Tracker</h2>
       </Link>
+      <Link to="/">
+        <h2 className="nav-title">5etools Home</h2>
+      </Link>
       <div>
         {/* If no user is logged in, show these links */}
         {!user.id && (
@@ -39,6 +42,7 @@ function Nav() {
         <Link className="navLink" to="/about">
           About
         </Link>
+        <script type="text/javascript" src="js/navigation.js"></script>
         <nav className="container page__nav" id="navigation">
           <ul className="nav nav-pills page__nav-inner" id="navbar"></ul>
         </nav>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import './LandingPage.css';
+// import './LandingPage.css';
 import Links from '../Links/Links';
 
 // CUSTOM COMPONENTS
