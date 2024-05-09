@@ -20,10 +20,10 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import Campaign from '../Campaign/Campaign';
+import '../../../css/maps.css';
 import '../../../css/index.css';
 import '../../../css/search.css';
 import '../../../css/main.css';
-import '../../../css/index.css';
 import '../../../css/bootstrap.css';
 import '../../../css/classes.css';
 
@@ -40,9 +40,65 @@ function App() {
 
   return (
     <Router>
+      <head>
+        {/* <!--5ETOOLS_CMP--> */}
+        {/* <!--5ETOOLS_ANALYTICS--> */}
+        {/* <!--5ETOOLS_ADCODE--> */}
+        <meta charSet="utf-8"/>
+        <meta name="description" content="A suite of browser-based tools for 5th Edition  Dungeons &amp; Dragons players and Dungeon Masters."/>
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+
+        <title>5etools</title>
+
+        <link rel="stylesheet" href="../../../css/bootstrap.css"/>
+        <link rel="stylesheet" href="../../../css/fontawesome.css"/>
+        <link rel="stylesheet" href="../../../css/main.css"/>
+        <link rel="stylesheet" href="../../../css/index.css"/>
+
+        {/* <!-- Favicons --> */}
+        <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+        <link rel="icon" type="image/png" sizes="256x256" href="favicon-256x256.png"/>
+        <link rel="icon" type="image/png" sizes="144x144" href="favicon-144x144.png"/>
+        <link rel="icon" type="image/png" sizes="128x128" href="favicon-128x128.png"/>
+        <link rel="icon" type="image/png" sizes="64x64" href="favicon-64x64.png"/>
+        <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png"/>
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png"/>
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png"/>
+
+        {/* <!-- Chrome Web App Icons --> */}
+        <link rel="manifest" href="manifest.webmanifest"/>
+        <meta name="application-name" content="5etools"/>
+        <meta name="theme-color" content="#006bc4"/>
+
+        {/* <!-- Windows Start Menu tiles --> */}
+        <meta name="msapplication-config" content="browserconfig.xml"/>
+        <meta name="msapplication-TileColor" content="#006bc4"/>
+
+        {/* <!-- Apple Touch Icons --> */}
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180x180.png"/>
+        <link rel="apple-touch-icon" sizes="360x360" href="apple-touch-icon-360x360.png"/>
+        <link rel="apple-touch-icon" sizes="167x167" href="apple-touch-icon-167x167.png"/>
+        <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png"/>
+        <link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-120x120.png"/>
+        <meta name="apple-mobile-web-app-title" content="5etools"/>
+
+        {/* <!-- macOS Safari Pinned Tab and Touch Bar --> */}
+        <link rel="mask-icon" href="safari-pinned-tab.svg" color="#006bc4"/>
+
+        {/* <!-- OpenSearch --> */}
+        <link rel="search" href="open-search.xml" title="Search 5etools" type="application/opensearchdescription+xml"/>
+
+        <script type="text/javascript" src="../../../sw-injector.js"></script>
+
+        <script type="text/javascript" src="../../../js/styleswitch.js"></script>
+        <script type="text/javascript" src="../../../js/navigation.js"></script>
+        <script type="text/javascript" src="../../../js/browsercheck.js"></script>
+      </head>
       <div>
         {/* <Nav /> */}
-        {<nav clasName="container page__nav" id="navigation"><button className="btn btn-default page__btn-toggle-nav">
+        <nav className="container page__nav" id="navigation"><button className="btn btn-default page__btn-toggle-nav">
           Menu</button>
 	        <ul className="nav nav-pills page__nav-inner" id="navbar">
 
@@ -1010,7 +1066,23 @@ function App() {
           <div className="omni__wrp-output ve-flex ve-hidden">
             <div className="omni__output"></div>
           </div>
-        </nav>}
+          <script type="text/javascript" src="../../../js/parser.js"></script>
+          <script type="text/javascript" src="../../../js/utils.js"></script>
+          <script type="text/javascript" src="../../../js/utils-ui.js"></script>
+          <script type="text/javascript" src="../../../lib/localforage.js"></script>
+          <script type="text/javascript" src="../../../js/omnidexer.js"></script>
+          <script type="text/javascript" src="../../../js/omnisearch.js"></script>
+          <script type="text/javascript" src="../../../js/filter.js"></script>
+          <script type="text/javascript" src="../../../js/utils-dataloader.js"></script>
+          <script type="text/javascript" src="../../../js/utils-brew.js"></script>
+          <script type="text/javascript" src="../../../js/render.js"></script>
+          <script type="text/javascript" src="../../../js/render-dice.js"></script>
+          <script type="text/javascript" src="../../../js/scalecreature.js"></script>
+          <script type="text/javascript" src="../../../js/hist.js"></script>
+          <script type="module" src="../../../js/index.js"></script>
+          <script type="text/javascript" src="../../../lib/jquery.js"></script>
+          <script type="text/javascript" src="../../../lib/elasticlunr.js"></script>
+        </nav>
         <Switch>
           {/* Visiting localhost:5173 will redirect to localhost:5173/home */}
           <Redirect exact from="/" to="/home" />
