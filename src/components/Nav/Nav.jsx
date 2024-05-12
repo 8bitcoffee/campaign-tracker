@@ -43,9 +43,9 @@ function Nav() {
           About
         </Link>
         <script type="text/javascript" src="js/navigation.js"></script>
-        <nav className="container page__nav" id="navigation">
+        {/* <nav className="container page__nav" id="navigation">
           <ul className="nav nav-pills page__nav-inner" id="navbar"></ul>
-        </nav>
+        </nav> */}
       </div>
     </div>
   );
